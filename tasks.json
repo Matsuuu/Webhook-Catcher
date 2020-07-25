@@ -7,7 +7,7 @@
             "name": "Webhook Catcher",
             "tasks": [
                 { "name": "Pull latest version", "command": "git pull" },
-                { "name": "Install dependencies", "command": "npm run install" }
+                { "name": "Install dependencies", "command": "npm install" }
             ]
         }
     ]

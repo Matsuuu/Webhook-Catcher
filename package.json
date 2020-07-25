@@ -1,11 +1,11 @@
 {
-  "name": "webhook-catcher",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+    "name": "webhook-catcher",
+    "version": "1.0.0",
+    "description": "A small tool for quick catching and handling of webhooks",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js tasks.json"
+    },
+    "author": "Matsuuu",
+    "license": "ISC"
 }

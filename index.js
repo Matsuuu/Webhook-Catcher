@@ -1,5 +1,5 @@
 const { createServer } = require('http');
-const { exec } = require('child_process');
+const { execSync } = require('child_process');
 const fs = require('fs');
 const args = process.argv.slice(2);
 
@@ -63,12 +63,13 @@ const return500 = (response) => {
 
 const executeTasks = (repository) => {
     repository.tasks.forEach((task) => {
-        exec(task.command, (error, stdout, stderr) => {
+        console.log(task);
+        execSync(task.command, (error, stdout, stderr) => {
             if (error) {
                 throw error;
             }
             if (stderr) {
-                throw stderr;
+                console.error(stderr);
             }
             if (config.verbose) {
                 console.log(
