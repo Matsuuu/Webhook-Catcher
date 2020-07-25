@@ -1,0 +1,15 @@
+{
+    "port": 8080,
+    "verbose": true,
+    "repositories": [
+        {
+            "repository": "https://github.com/Matsuuu/dev-blog",
+            "name": "Dev Blog",
+            "tasks": [
+                { "name": "Pull latest version", "command": "git pull" },
+                { "name": "Install dependencies", "command": "npm run install" },
+                { "name": "Build", "command": "npm run build" }
+            ]
+        }
+    ]
+}
