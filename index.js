@@ -24,7 +24,7 @@ const generateConfig = () => {
 
 if (args.length < 1 || args[0] === '-h' || args[0] === '--help') {
     console.log(
-        `\nTo use Webhook Handler, provide a json file with tasks. \n\n e.g. webhook-handler tasks.json \n\nTo generate one, run this comand with the '-g' flag\n`
+        `\nTo use Webhook Handler, provide a json file with tasks. \n\ne.g. 'webhook-handler tasks.json' \n\nTo generate one, run 'webhook-handler -g' \n`
     );
     return;
 }
