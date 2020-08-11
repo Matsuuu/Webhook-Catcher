@@ -10,7 +10,7 @@ const generateConfig = () => {
             {
                 port: 8080,
                 verbose: true,
-                repositories: [{ repository: '', name: '', tasks: [{ name: '', command: '' }] }],
+                repositories: [{ repository: 'https://github.com/my-user-name/my-repository', name: 'my-repository', tasks: [{ name: 'Pull latest version', command: 'git pull' }] }],
             },
             null,
             4
@@ -24,7 +24,7 @@ const generateConfig = () => {
 
 if (args.length < 1 || args[0] === '-h' || args[0] === '--help') {
     console.log(
-        `\nTo use Webhook Catcher, provide a json file with tasks.\n\nTo generate one, run this comand with the '-g' flag\n`
+        `\nTo use Webhook Handler, provide a json file with tasks. \n\n e.g. webhook-handler tasks.json \n\nTo generate one, run this comand with the '-g' flag\n`
     );
     return;
 }
@@ -34,7 +34,7 @@ if (args[0] === '-g') {
 }
 
 // Parse task params and set default settings
-const tasksFilePath = args[0].substring(0, 1) === '/' ? args[0] : './' + args[0];
+const tasksFilePath = args[0].substring(0, 1) === '/' ? args[0] : `${process.cwd()}/${args[0]}`;
 const config = require(tasksFilePath);
 const PORT = config.port;
 const server = createServer();
@@ -52,7 +52,7 @@ const return400 = (response) => {
 };
 
 const return404 = (response) => {
-    response.statusCode = 403;
+    response.statusCode = 404;
     response.end('Not found');
 };
 

@@ -1,8 +1,11 @@
 {
-    "name": "webhook-catcher",
-    "version": "1.0.0",
+    "name": "webhook-handler",
+    "version": "0.0.4",
     "description": "A small tool for quick catching and handling of webhooks",
     "main": "index.js",
+    "bin": {
+        "webhook-handler": "./bin/webhook-handler"
+    },
     "scripts": {
         "start": "node index.js tasks.json"
     },
